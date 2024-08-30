@@ -1,0 +1,5 @@
+# Ejecuta el script de backup.sh cada minuto
+*/1 * * * * /usr/local/bin/backup.sh >> /var/log/backup.log 2>&1
+
+# Tarea programada para ejecutarse todos los días a las 2 AM
+0 2 * * * /path/to/another_script.sh >> /var/log/another_script.log 2>&1
