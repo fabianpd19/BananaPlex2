@@ -3,7 +3,7 @@ session_start();
 require_once 'backend/config.php';
 
 if (!isset($_SESSION['email'])) {
-    header('Location: editar_cliente.php');
+    header('Location: login.html');
     exit();
 }
 
@@ -142,19 +142,19 @@ $provincia_id = $cliente['provincia_id'];
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="nombre1" class="form-label">Primer Nombre</label>
-                                    <input type="text" class="form-control" id="nombre1" name="nombre1" value="<?php echo htmlspecialchars($cliente['nombre1']); ?>" required>
+                                    <input type="text" class="form-control" id="nombre1" name="nombre1" pattern="^[^\d]*$" title="El nombre no debe contener números" value="<?php echo htmlspecialchars($cliente['nombre1']); ?>" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="nombre2" class="form-label">Segundo Nombre</label>
-                                    <input type="text" class="form-control" id="nombre2" name="nombre2" value="<?php echo htmlspecialchars($cliente['nombre2']); ?>">
+                                    <input type="text" class="form-control" id="nombre2" name="nombre2" pattern="^[^\d]*$" title="El nombre no debe contener números" value="<?php echo htmlspecialchars($cliente['nombre2']); ?>" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="apellido1" class="form-label">Primer Apellido</label>
-                                    <input type="text" class="form-control" id="apellido1" name="apellido1" value="<?php echo htmlspecialchars($cliente['apellido1']); ?>" required>
+                                    <input type="text" class="form-control" id="apellido1" name="apellido1" pattern="^[^\d]*$" title="El nombre no debe contener números" value="<?php echo htmlspecialchars($cliente['apellido1']); ?>" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="apellido2" class="form-label">Segundo Apellido</label>
-                                    <input type="text" class="form-control" id="apellido2" name="apellido2" value="<?php echo htmlspecialchars($cliente['apellido2']); ?>" required>
+                                    <input type="text" class="form-control" id="apellido2" name="apellido2" pattern="^[^\d]*$" title="El nombre no debe contener números" value="<?php echo htmlspecialchars($cliente['apellido2']); ?>" required>
                                 </div>
                                 <div class="col-md-8">
                                     <label for="direccion" class="form-label">Dirección</label>
@@ -162,7 +162,7 @@ $provincia_id = $cliente['provincia_id'];
                                 </div>
                                 <div class="col-md-6">
                                     <label for="telefono" class="form-label">Teléfono</label>
-                                    <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo htmlspecialchars($cliente['telefono']); ?>" required>
+                                    <input type="text" class="form-control" id="telefono" name="telefono" pattern="\d{10}" title="Debe contener exactamente 10 dígitos numéricos" value="<?php echo htmlspecialchars($cliente['telefono']); ?>" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="empresa" class="form-label">Empresa</label>

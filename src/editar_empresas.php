@@ -3,7 +3,7 @@ session_start();
 require_once 'backend/config.php';
 
 if (!isset($_SESSION['email'])) {
-    header('Location: editar_empresas.php');
+    header('Location: login.html');
     exit();
 }
 
@@ -114,7 +114,7 @@ $email = htmlspecialchars($empresa['email']);
 
                         <div class="form-group">
                             <label for="telefono">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo $telefono; ?>" required>
+                            <input type="text" class="form-control" id="telefono" name="telefono" pattern="\d{10}" title="Debe contener exactamente 10 dígitos numéricos" value="<?php echo $telefono; ?>" required>
                         </div>
 
                         <div class="form-group">

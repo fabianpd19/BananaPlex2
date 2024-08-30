@@ -3,7 +3,7 @@ session_start();
 require_once 'backend/config.php';
 
 if (!isset($_SESSION['email'])) {
-    header('Location: crear_empleados.php');
+    header('Location: login.html');
     exit();
 }
 
