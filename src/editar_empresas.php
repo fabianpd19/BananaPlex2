@@ -114,7 +114,7 @@ $email = htmlspecialchars($empresa['email']);
 
                         <div class="form-group">
                             <label for="telefono">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo $telefono; ?>" required>
+                            <input type="text" class="form-control" id="telefono" name="telefono" pattern="\d{10}" title="Debe contener exactamente 10 dígitos numéricos" value="<?php echo $telefono; ?>" required>
                         </div>
 
                         <div class="form-group">

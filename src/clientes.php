@@ -85,8 +85,9 @@ $pdo = connect_db($role);
                         <i class="fas fa-align-justify"></i>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
                         <h3 class="my-3" id="titulo">Clientes</h3>
+                        <button class="btn btn-danger ml-5" onclick="window.location.href='logout.php';">Cerrar sesión</button>
                     </div>
                 </div>
             </nav>

@@ -16,7 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: ../index.php');
         exit();
     } else {
-        echo "Credenciales incorrectas";
+        // Muestra el mensaje de error con JavaScript
+        echo "<script>
+                alert('Credenciales incorrectas');
+                window.location.href = '../login.html'; // Asegúrate de redirigir a la misma página
+              </script>";
     }
 }
 ?>
