@@ -3,7 +3,7 @@ session_start();
 require_once 'backend/config.php';
 
 if (!isset($_SESSION['email'])) {
-    header('Location: editar_cliente.php');
+    header('Location: login.html');
     exit();
 }
 

@@ -3,7 +3,7 @@ session_start();
 require_once 'backend/config.php';
 
 if (!isset($_SESSION['email'])) {
-    header('Location: productos.php');
+    header('Location: login.html');
     exit();
 }
 
@@ -182,7 +182,8 @@ $pdo = connect_db($role);
             });
         });
         <?php if (isset($_SESSION['error_message'])): ?>
-            var errorMessage = "<?php echo $_SESSION['error_message']; unset($_SESSION['error_message']); ?>";
+            var errorMessage = "<?php echo $_SESSION['error_message'];
+                                unset($_SESSION['error_message']); ?>";
             var errorModal = new bootstrap.Modal(document.getElementById('errorModal'), {});
             document.getElementById('modalMessage').textContent = errorMessage;
             errorModal.show();

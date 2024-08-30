@@ -3,7 +3,7 @@ session_start();
 require_once 'backend/config.php';
 
 if (!isset($_SESSION['email'])) {
-    header('Location: empresas.php');
+    header('Location: login.html');
     exit();
 }
 
@@ -28,7 +28,7 @@ $pdo = connect_db($role);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-ChfqqG3gJ6K2Vb9D15iA5DjtE3Fj+7AA3zZJb3M4xB02s44gO1VVdp6zJ5z0zBz" crossorigin="anonymous"></script>
     <!-- Custom Scrollbar JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    
+
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -213,7 +213,8 @@ $pdo = connect_db($role);
             });
         });
         <?php if (isset($_SESSION['error_message'])): ?>
-            var errorMessage = "<?php echo $_SESSION['error_message']; unset($_SESSION['error_message']); ?>";
+            var errorMessage = "<?php echo $_SESSION['error_message'];
+                                unset($_SESSION['error_message']); ?>";
             var errorModal = new bootstrap.Modal(document.getElementById('errorModal'), {});
             document.getElementById('modalMessage').textContent = errorMessage;
             errorModal.show();

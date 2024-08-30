@@ -3,7 +3,7 @@ session_start();
 require_once 'backend/config.php';
 
 if (!isset($_SESSION['email'])) {
-    header('Location: nuevo_empresa.php');
+    header('Location: login.html');
     exit();
 }
 
