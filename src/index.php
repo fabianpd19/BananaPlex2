@@ -1,7 +1,14 @@
 <?php
-include 'backend/config.php';
-$pdo = connect_db('admin2'); // Usa 'admin1' o el rol adecuado aquí
-// Consulta para obtener estadísticas
+session_start();
+require_once 'backend/config.php';
+
+if (!isset($_SESSION['email'])) {
+    header('Location: login.html');
+    exit();
+}
+
+$role = $_SESSION['role'];
+$pdo = connect_db($role);
 
 // Consulta para obtener estadísticas
 $query = $pdo->query('

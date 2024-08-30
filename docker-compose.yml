@@ -11,6 +11,31 @@ services:
       - "5419:5432"
     volumes:
       - ./db:/docker-entrypoint-initdb.d
+      - ./postgres-config/postgresql.conf:/etc/postgresql/postgresql.conf  # Montar archivo postgresql.conf personalizado
+      - ./postgres-config/pg_hba.conf:/etc/postgresql/pg_hba.conf          # Montar archivo pg_hba.conf personalizado
+    networks:
+      - postgres-network
+    command: ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
+
+  db-replica:
+    image: postgres
+    environment:
+      POSTGRES_USER: Grupo3
+      POSTGRES_PASSWORD: gestiongrupo3
+      POSTGRES_DB: BananaPlex
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    volumes:
+      - ./replica_data:/var/lib/postgresql/data
+      - ./postgres-config/postgresql.conf:/etc/postgresql/postgresql.conf  # Montar archivo postgresql.conf personalizado
+      - ./postgres-config/pg_hba.conf:/etc/postgresql/pg_hba.conf          # Montar archivo pg_hba.conf personalizado
+    depends_on:
+      - db
+    entrypoint: >
+      bash -c "until pg_isready -h db -p 5432; do sleep 1; done;
+      pg_basebackup -h db -D /var/lib/postgresql/data -U Grupo3 -vP -W;
+      postgres -c config_file=/etc/postgresql/postgresql.conf"
+    networks:
+      - postgres-network
 
   php:
     build:
@@ -72,6 +97,10 @@ services:
       - ./crontab:/etc/cron.d/backup-cron
     depends_on:
       - db
+
+networks:
+  postgres-network:
+    driver: bridge
 
 volumes:
   grafana_data:
