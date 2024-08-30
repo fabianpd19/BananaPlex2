@@ -1,0 +1,5 @@
+REFRESH MATERIALIZED VIEW vista_empleados;
+REFRESH MATERIALIZED VIEW clientes_info;
+REFRESH MATERIALIZED VIEW empresas_info;
+REFRESH MATERIALIZED VIEW productos_info;
+REFRESH MATERIALIZED VIEW solicitudes_pendientes;

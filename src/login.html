@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-U1j1QJRxtE5L6oRp8jCtWWz3zdf2iKjU63a5sp5i6P1z4K3p1Q48N355zchNY9r" crossorigin="anonymous" />
+  <style>
+    /* Colores personalizados */
+    body {
+      background-color: #bce4bc;
+      /* Verde claro */
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .container {
+      align-content: center;
+      max-width: 400px;
+      margin: 70px auto;
+    }
+
+    .card {
+      background-color: #ffffe6;
+      border-color: #e6e6e6;
+    }
+
+    .card-header {
+      background-color: #c4e8fa;
+      color: #333;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: -20px;
+      /* Aumenta el margen superior */
+      margin-bottom: -20px;
+      /* Aumenta el margen inferior */
+    }
+
+    .card-body {
+      padding: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .input-group-text {
+      background-color: #e6e6e6;
+    }
+
+    .btn-primary {
+      background-color: #7386D5;
+      /* Verde */
+      border-color: #47748b;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background-color: #47748b;
+    }
+
+    .btn-link {
+      color: #47748b;
+      /* Verde */
+      text-decoration: none;
+      margin-top: 15px;
+      display: block;
+      text-align: center;
+    }
+
+    header {
+      background-color: #47748b;
+      /* Verde claro más oscuro */
+      color: #ffffff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    header img {
+      width: 25px;
+      /* Ajusta el tamaño del logo */
+      height: auto;
+      margin-right: 10px;
+      /* Espacio entre el logo y el texto */
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #47748b;
+      color: white;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <h2>🍌 PlatanoPlex 🍌</h2>
+  </header>
+  <div class="container">
+    <center>
+      <div class="card">
+        <h2 class="card-header">Iniciar sesión</h2>
+        <div class="card-body">
+          <form action="backend/login.php" method="post">
+            <div class="form-group">
+              <label for="email" class="form-label">Correo electrónico:</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                  required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="form-label">Contraseña:</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" class="form-control" id="password" name="password" required />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Iniciar sesión
+            </button>
+          </form>
+        </div>
+      </div>
+    </center>
+  </div>
+  <footer>
+    <p>Fabian Palma y Mendoza Jhonson / Proyecto Unidad 1</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-O4lroPHgQjJ75kXh7v84jhtMAeOIvL5w60tK4WvYjQjEfUE9i0xQ1xK59xG7rV" crossorigin="anonymous"></script>
+</body>
+
+</html>
